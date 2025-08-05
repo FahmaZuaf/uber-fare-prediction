@@ -4,8 +4,8 @@ import numpy as np
 
 app = Flask(__name__)
 
-model = joblib.load('uber-fare-predictor/uber_fare_model.pkl')
-scaler = joblib.load('uber-fare-predictor/scaler.pkl')
+model = joblib.load('uber_fare_model.pkl')
+scaler = joblib.load('scaler.pkl')
 
 @app.route('/')
 def home():
@@ -26,3 +26,4 @@ def predict():
         return render_template('index.html', prediction_text=f"Estimated Fare: ${fare:.2f}")
     except Exception as e:
         return render_template('index.html', prediction_text=f"Error: {str(e)}")
+
