@@ -26,6 +26,3 @@ def predict():
         return render_template('index.html', prediction_text=f"Estimated Fare: ${fare:.2f}")
     except Exception as e:
         return render_template('index.html', prediction_text=f"Error: {str(e)}")
-
-if __name__ == '__main__':
-    app.run(debug=True)
